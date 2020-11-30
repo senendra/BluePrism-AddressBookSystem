@@ -67,12 +67,20 @@
     <name>checking duplicate records</name>
     <view>
       <camerax>115</camerax>
-      <cameray>107</cameray>
+      <cameray>233</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
   <subsheet subsheetid="28022c88-154a-4c04-94fa-f83e40660d82" type="Normal" published="False">
     <name>retreive by name</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="c3b01f64-af9e-4d0a-b281-db593ece411b" type="Normal" published="False">
+    <name>Send Email</name>
     <view>
       <camerax>0</camerax>
       <cameray>0</cameray>
@@ -161,7 +169,7 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit onsuccess="true" />
     <display x="150" y="120" />
     <inputs>
-      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;insert into [BluePrismDB].[dbo].[AddressBook] values&#xA;('&quot;&amp;[Data to Insert.first_name]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.last_name]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.address]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.city]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.state]&amp;&quot;',&#xA;&quot;&amp;[Data to Insert.zip]&amp;&quot;,&#xA;'&quot;&amp;[Data to Insert.phone_number]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.email]&amp;&quot;')&quot;" />
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;insert into [AddressBook].[dbo].[AddressBook] values&#xA;('&quot;&amp;[Data to Insert.First_Name]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.Last_Name]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.Address]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.City]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.State]&amp;&quot;',&#xA;&quot;&amp;[Data to Insert.Zip]&amp;&quot;,&#xA;'&quot;&amp;[Data to Insert.Phone_Number]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.Email]&amp;&quot;')&quot;" />
     </inputs>
     <outputs>
       <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
@@ -178,25 +186,25 @@ You will not be able to call this action from a business process, nor will it be
     <private />
     <alwaysinit />
     <collectioninfo>
-      <field name="first_name" type="text" />
-      <field name="last_name" type="text" />
-      <field name="address" type="text" />
-      <field name="city" type="text" />
-      <field name="zip" type="number" />
-      <field name="phone_number" type="text" />
-      <field name="email" type="text" />
-      <field name="state" type="text" />
+      <field name="First_Name" type="text" />
+      <field name="Last_Name" type="text" />
+      <field name="Address" type="text" />
+      <field name="City" type="text" />
+      <field name="State" type="text" />
+      <field name="Zip" type="number" />
+      <field name="Phone_Number" type="text" />
+      <field name="Email" type="text" />
     </collectioninfo>
     <initialvalue>
       <row>
-        <field name="first_name" type="text" value="" />
-        <field name="last_name" type="text" value="" />
-        <field name="address" type="text" value="" />
-        <field name="city" type="text" value="" />
-        <field name="zip" type="number" value="" />
-        <field name="phone_number" type="text" value="" />
-        <field name="email" type="text" value="" />
-        <field name="state" type="text" value="" />
+        <field name="First_Name" type="text" value="" />
+        <field name="Last_Name" type="text" value="" />
+        <field name="Address" type="text" value="" />
+        <field name="City" type="text" value="" />
+        <field name="Email" type="text" value="" />
+        <field name="Phone_Number" type="text" value="" />
+        <field name="Zip" type="number" value="" />
+        <field name="State" type="text" value="" />
       </row>
     </initialvalue>
   </stage>
@@ -228,7 +236,7 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit onsuccess="true" />
     <display x="15" y="-15" />
     <inputs>
-      <input type="text" name="SQL" friendlyname="SQL" narrative="The SQL query to use to perform this action" expr="&quot;select * from [BluePrismDB].[dbo].[AddressBook]&quot;" />
+      <input type="text" name="SQL" friendlyname="SQL" narrative="The SQL query to use to perform this action" expr="&quot;select * from [AddressBook].[dbo].[AddressBook]&quot;" />
     </inputs>
     <outputs>
       <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
@@ -266,7 +274,7 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit onsuccess="true" />
     <display x="30" y="15" />
     <inputs>
-      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;update [BluePrismDB].[dbo].[AddressBook]&#xA;set email = '&quot;&amp;[new email]&amp;&quot;'&#xA;where first_name = '&quot;&amp;[first name of record to be updated]&amp;&quot;'&quot;" />
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;update [AddressBook].[dbo].[AddressBook]&#xA;set Email = '&quot;&amp;[new email]&amp;&quot;'&#xA;where First_Name = '&quot;&amp;[first name of record to be updated]&amp;&quot;'&quot;" />
     </inputs>
     <outputs>
       <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success Flag" />
@@ -299,8 +307,8 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit onsuccess="true" />
     <display x="15" y="-45" />
     <inputs>
-      <input type="text" name="Server" friendlyname="Server" narrative="The name of the server and, if necessary, instance name of the SQL Server instance to connect to" expr="&quot;LAPTOP-T69UTPHB\SQLEXPRESS&quot;" />
-      <input type="text" name="Database" friendlyname="Database" narrative="The name of the database to connect to" expr="&quot;BluePrismDB&quot;" />
+      <input type="text" name="Server" friendlyname="Server" narrative="The name of the server and, if necessary, instance name of the SQL Server instance to connect to" expr="&quot;(LocalDB)\BluePrismLocalDB&quot;" />
+      <input type="text" name="Database" friendlyname="Database" narrative="The name of the database to connect to" expr="&quot;AddressBook&quot;" />
       <input type="text" name="User" friendlyname="User" narrative="If appropriate, the login name to use to connect to SQL Server. If left empty, windows authentication using the current user will be used instead of SQL Server authentication" expr="" />
       <input type="password" name="Password" friendlyname="Password" narrative="If appropriate, the password to use with the above login name to access SQL Server. Unused for windows authentication" expr="" />
     </inputs>
@@ -385,7 +393,7 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit onsuccess="true" />
     <display x="15" y="15" />
     <inputs>
-      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;delete from [BluePrismDB].[dbo].[AddressBook] &#xA;where first_name = '&quot;&amp;[first name of record to delete]&amp;&quot;'&quot;" />
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;delete from [AddressBook].[dbo].[AddressBook]&#xA;where First_Name = '&quot;&amp;[first name of record to delete]&amp;&quot;'&quot;" />
     </inputs>
     <outputs>
       <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
@@ -425,25 +433,25 @@ You will not be able to call this action from a business process, nor will it be
     <datatype>collection</datatype>
     <alwaysinit />
     <collectioninfo>
-      <field name="first_name" type="text" />
-      <field name="last_name" type="text" />
-      <field name="address" type="text" />
-      <field name="city" type="text" />
-      <field name="state" type="text" />
-      <field name="zip" type="text" />
-      <field name="phone_number" type="text" />
-      <field name="email" type="text" />
+      <field name="First_Name" type="text" />
+      <field name="Last_Name" type="text" />
+      <field name="Address" type="text" />
+      <field name="City" type="text" />
+      <field name="State" type="text" />
+      <field name="Zip" type="number" />
+      <field name="Phone_Number" type="text" />
+      <field name="Email" type="text" />
     </collectioninfo>
     <initialvalue>
       <row>
-        <field name="first_name" type="text" value="" />
-        <field name="last_name" type="text" value="" />
-        <field name="address" type="text" value="" />
-        <field name="city" type="text" value="" />
-        <field name="state" type="text" value="" />
-        <field name="zip" type="text" value="" />
-        <field name="phone_number" type="text" value="" />
-        <field name="email" type="text" value="" />
+        <field name="First_Name" type="text" value="" />
+        <field name="Last_Name" type="text" value="" />
+        <field name="Address" type="text" value="" />
+        <field name="City" type="text" value="" />
+        <field name="State" type="text" value="" />
+        <field name="Zip" type="number" value="" />
+        <field name="Phone_Number" type="text" value="" />
+        <field name="Email" type="text" value="" />
       </row>
     </initialvalue>
   </stage>
@@ -489,7 +497,7 @@ You will not be able to call this action from a business process, nor will it be
     <display x="15" y="30" />
     <inputs>
       <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[handle]" />
-      <input type="text" name="File name" friendlyname="File name" narrative="The path and name of the file which should be opened." expr="&quot;C:\Users\Snehil\Desktop\AddressBookSystem-BluePrism\Contacts.xlsx&quot;" />
+      <input type="text" name="File name" friendlyname="File name" narrative="The path and name of the file which should be opened." expr="&quot;C:\Users\Senendra Deshlahre\Desktop\BluePrism-AddressBookSystem\MainConatct.xlsx&quot;" />
     </inputs>
     <outputs>
       <output type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="Workbook Name" />
@@ -547,7 +555,7 @@ You will not be able to call this action from a business process, nor will it be
     <display x="150" y="30" />
     <inputs>
       <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[handle]" />
-      <input type="text" name="File name" friendlyname="File name" narrative="The path and name of the file which should be opened." expr="&quot;C:\Users\Snehil\Desktop\AddressBookSystem-BluePrism\Contacts From Database.xlsx&quot;" />
+      <input type="text" name="File name" friendlyname="File name" narrative="The path and name of the file which should be opened." expr="&quot;C:\Users\Senendra Deshlahre\Desktop\BluePrism-AddressBookSystem\Contacts From Database.xlsx&quot;" />
     </inputs>
     <outputs>
       <output type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="Workbook Name" />
@@ -609,7 +617,7 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit />
     <display x="-180" y="0" />
     <datatype>text</datatype>
-    <initialvalue xml:space="preserve">Johny</initialvalue>
+    <initialvalue xml:space="preserve">Shreyas                                           </initialvalue>
     <private />
     <alwaysinit />
   </stage>
@@ -618,7 +626,7 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit />
     <display x="-180" y="60" w="90" h="30" />
     <datatype>text</datatype>
-    <initialvalue xml:space="preserve">Bairstow@gmail.com</initialvalue>
+    <initialvalue xml:space="preserve">Senendra@gmail.com</initialvalue>
     <private />
     <alwaysinit />
   </stage>
@@ -627,7 +635,7 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit />
     <display x="-210" y="30" />
     <datatype>text</datatype>
-    <initialvalue xml:space="preserve">Johny</initialvalue>
+    <initialvalue xml:space="preserve">Shreyas</initialvalue>
     <private />
     <alwaysinit />
   </stage>
@@ -651,7 +659,7 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit onsuccess="true" />
     <display x="60" y="330" />
     <inputs>
-      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;insert into [BluePrismDB].[dbo].[AddressBook] values&#xA;('&quot;&amp;[Data to Insert.first_name]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.last_name]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.address]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.city]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.state]&amp;&quot;',&#xA;&quot;&amp;[Data to Insert.zip]&amp;&quot;,&#xA;'&quot;&amp;[Data to Insert.phone_number]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.email]&amp;&quot;')&quot;" />
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;insert into [AddressBook].[dbo].[AddressBook] values&#xA;('&quot;&amp;[Data to Insert.First_Name]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.Last_Name]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.Address]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.City]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.State]&amp;&quot;',&#xA;&quot;&amp;[Data to Insert.Zip]&amp;&quot;,&#xA;'&quot;&amp;[Data to Insert.Phone_Number]&amp;&quot;',&#xA;'&quot;&amp;[Data to Insert.Email]&amp;&quot;')&quot;" />
     </inputs>
     <outputs>
       <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
@@ -668,25 +676,25 @@ You will not be able to call this action from a business process, nor will it be
     <private />
     <alwaysinit />
     <collectioninfo>
-      <field name="first_name" type="text" />
-      <field name="last_name" type="text" />
-      <field name="address" type="text" />
-      <field name="city" type="text" />
-      <field name="zip" type="number" />
-      <field name="phone_number" type="text" />
-      <field name="email" type="text" />
-      <field name="state" type="text" />
+      <field name="First_Name" type="text" />
+      <field name="Last_Name" type="text" />
+      <field name="Address" type="text" />
+      <field name="City" type="text" />
+      <field name="State" type="text" />
+      <field name="Zip" type="number" />
+      <field name="Phone_Number" type="text" />
+      <field name="Email" type="text" />
     </collectioninfo>
     <initialvalue>
       <row>
-        <field name="first_name" type="text" value="" />
-        <field name="last_name" type="text" value="" />
-        <field name="address" type="text" value="" />
-        <field name="city" type="text" value="" />
-        <field name="zip" type="number" value="" />
-        <field name="phone_number" type="text" value="" />
-        <field name="email" type="text" value="" />
-        <field name="state" type="text" value="" />
+        <field name="First_Name" type="text" value="" />
+        <field name="Last_Name" type="text" value="" />
+        <field name="Address" type="text" value="" />
+        <field name="City" type="text" value="" />
+        <field name="State" type="text" value="" />
+        <field name="Zip" type="number" value="" />
+        <field name="Phone_Number" type="text" value="" />
+        <field name="Email" type="text" value="" />
       </row>
     </initialvalue>
   </stage>
@@ -727,7 +735,7 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit />
     <narrative>checking equality on basis of first name , last name and email because email has to be unique</narrative>
     <display x="150" y="270" />
-    <decision expression="[Data to Insert.first_name] = [Results.first_name] AND&#xA;[Data to Insert.last_name] = [Results.last_name] AND&#xA;[Data to Insert.email] = [Results.email]" />
+    <decision expression="[Data to Insert.First_Name] = [Results.First_Name] AND&#xA;[Data to Insert.Last_Name] = [Results.Last_Name] AND&#xA;[Data to Insert.Email] = [Results.Email]" />
     <ontrue>4df180ad-775d-4657-917c-7b3f173b5668</ontrue>
     <onfalse>723d1d2e-16b6-410e-8322-5d21fadc2449</onfalse>
   </stage>
@@ -777,8 +785,8 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit onsuccess="true" />
     <display x="-15" y="75" />
     <inputs>
-      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="" />
-      <input type="text" name="File name" friendlyname="File name" narrative="The path and name of the file which should be opened." expr="&quot;C:\Users\Snehil\Desktop\AddressBookSystem-BluePrism\Duplicate Contacts.xlsx&quot;" />
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="File name" friendlyname="File name" narrative="The path and name of the file which should be opened." expr="&quot;C:\Users\Senendra Deshlahre\Desktop\BluePrism-AddressBookSystem\Duplicate Contacts1.xlsx&quot;" />
     </inputs>
     <outputs>
       <output type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="Workbook Name" />
@@ -850,7 +858,7 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit onsuccess="true" />
     <display x="15" y="-15" />
     <inputs>
-      <input type="text" name="SQL" friendlyname="SQL" narrative="The SQL query to use to perform this action" expr="&quot;select * from [BluePrismDB].[dbo].[AddressBook] &#xA;where first_name = '&quot;&amp;[first name]&amp;&quot;' AND last_name = '&quot;&amp;[last name]&amp;&quot;'&quot;" />
+      <input type="text" name="SQL" friendlyname="SQL" narrative="The SQL query to use to perform this action" expr="&quot;select * from [AddressBook].[dbo].[AddressBook] &#xA;where First_Name = '&quot;&amp;[first name]&amp;&quot;' AND Last_Name = '&quot;&amp;[last name]&amp;&quot;'&quot;" />
     </inputs>
     <outputs>
       <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
@@ -866,25 +874,25 @@ You will not be able to call this action from a business process, nor will it be
     <datatype>collection</datatype>
     <alwaysinit />
     <collectioninfo>
-      <field name="first_name" type="text" />
-      <field name="last_name" type="text" />
-      <field name="address" type="text" />
-      <field name="city" type="text" />
-      <field name="state" type="text" />
-      <field name="zip" type="text" />
-      <field name="phone_number" type="text" />
-      <field name="email" type="text" />
+      <field name="First_Name" type="text" />
+      <field name="Last_Name" type="text" />
+      <field name="Address" type="text" />
+      <field name="City" type="text" />
+      <field name="State" type="text" />
+      <field name="Zip" type="number" />
+      <field name="Phone_Number" type="text" />
+      <field name="Email" type="text" />
     </collectioninfo>
     <initialvalue>
       <row>
-        <field name="first_name" type="text" value="" />
-        <field name="last_name" type="text" value="" />
-        <field name="address" type="text" value="" />
-        <field name="city" type="text" value="" />
-        <field name="state" type="text" value="" />
-        <field name="zip" type="text" value="" />
-        <field name="phone_number" type="text" value="" />
-        <field name="email" type="text" value="" />
+        <field name="First_Name" type="text" value="" />
+        <field name="Last_Name" type="text" value="" />
+        <field name="Address" type="text" value="" />
+        <field name="City" type="text" value="" />
+        <field name="State" type="text" value="" />
+        <field name="Zip" type="number" value="" />
+        <field name="Phone_Number" type="text" value="" />
+        <field name="Email" type="text" value="" />
       </row>
     </initialvalue>
   </stage>
@@ -921,5 +929,231 @@ You will not be able to call this action from a business process, nor will it be
     <initialvalue xml:space="preserve">Iyer</initialvalue>
     <private />
     <alwaysinit />
+  </stage>
+  <stage stageid="35a740c0-ed85-46d7-8be7-11fa7638abbd" name="Send Email" type="SubSheetInfo">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="2ecfb90f-d411-42a1-808f-2641af38d956" name="Start" type="Start">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit />
+    <display x="15" y="-210" />
+    <onsuccess>0b850f0d-bda4-40ed-ad3c-a7531c161cb1</onsuccess>
+  </stage>
+  <stage stageid="61543ee3-b51f-47a8-ab6e-30fa5319c374" name="End" type="End">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit />
+    <display x="15" y="180" />
+  </stage>
+  <stage stageid="a9e7827d-956f-4983-8e93-107cfaa7ced4" name="Credentials::Get" type="Action">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Get the specified set of credentials.
+
+An Exception will occur if access to the credentials is not allowed, based on the running Resource, Process and User.</narrative>
+    <display x="15" y="0" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials to get" expr="&quot;Email Credential&quot;" />
+    </inputs>
+    <outputs>
+      <output type="password" name="Password" friendlyname="Password" narrative="The password" stage="Password" />
+      <output type="text" name="Username" friendlyname="Username" narrative="The user name" stage="Username" />
+      <output type="date" name="Expiry Date" friendlyname="Expiry Date" narrative="The expiry date" stage="" />
+      <output type="text" name="Status" friendlyname="Status" narrative="The status" stage="" />
+    </outputs>
+    <onsuccess>7e3b1711-4c95-40d3-b7ef-87c046715d61</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get" />
+  </stage>
+  <stage stageid="7e3b1711-4c95-40d3-b7ef-87c046715d61" name="Email - POP3/SMTP::Configure" type="Action">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="60" />
+    <inputs>
+      <input type="text" name="Username" friendlyname="Username" narrative="The POP3 and SMTP Username" expr="[Username]" />
+      <input type="password" name="Password" friendlyname="Password" narrative="The POP3 and SMTP Password" expr="[Password]" />
+      <input type="text" name="POP3 Server" friendlyname="POP3 Server" narrative="The POP3 Server address e.g. pop.domain.com" expr="&quot;pop.gmail.com&quot;" />
+      <input type="text" name="SMTP Server" friendlyname="SMTP Server" narrative="The SMTP Server address e.g. smtp.domain.com" expr="&quot;smtp.gmail.com&quot;" />
+      <input type="number" name="POP3 Port" friendlyname="POP3 Port" narrative="The POP3 Port, e.g. 110 or 995" expr="995" />
+      <input type="number" name="SMTP Port" friendlyname="SMTP Port" narrative="The SMTP Port, e.g 25 or 465" expr="587" />
+      <input type="flag" name="POP3 UseSSL" friendlyname="POP3 UseSSL" narrative="Whether to use SSL for POP3" expr="True" />
+      <input type="flag" name="SMTP UseSSL" friendlyname="SMTP UseSSL" narrative="Whether to use SSL for SMTP" expr="True" />
+    </inputs>
+    <onsuccess>8443be82-dc7e-4595-bc48-eb7c8c7e3539</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Configure" />
+  </stage>
+  <stage stageid="509a5238-c0fb-421a-b4fc-8e040383d352" name="Password" type="Data">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <display x="-180" y="-15" />
+    <datatype>password</datatype>
+    <initialvalueenc>
+    </initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8084e83b-7cb4-4dfb-b226-410642cb5be6" name="Username" type="Data">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <display x="-195" y="15" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5b34c44b-1112-43b5-adbe-7584d1f2eb94" name="Send Mail" type="Action">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="240" y="180" />
+    <inputs>
+      <input type="text" name="From" friendlyname="From" narrative="The email address of the sender." expr="[Username]" />
+      <input type="text" name="To" friendlyname="To" narrative="The email address of the recipient. To address multiple recipients use the format &quot;john.smith@example.com, henry.jones@example.com&quot; OR &quot;John Smith &lt;john.smith@example.com&gt;, Henry Jones &lt;henry.jones@example.com&gt;&quot;." expr="[Results1.Email]" />
+      <input type="text" name="Subject" friendlyname="Subject" narrative="The subject of the email." expr="&quot;Find Attachment&quot;" />
+      <input type="text" name="Body" friendlyname="Body" narrative="The body of the email." expr="" />
+      <input type="collection" name="Attachments" friendlyname="Attachments" narrative="A Collection containing a list of files to add to the email as attachments." expr="[Attachment]" />
+      <input type="flag" name="BodyIsHTML" friendlyname="BodyIsHTML" narrative="Indicates if the body should be sent as HTML" expr="True" />
+    </inputs>
+    <onsuccess>3db62507-bcd1-4c1a-950e-8d3ba009ea9d</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Send Message" />
+  </stage>
+  <stage stageid="2374fcf0-a4a3-42f0-bb4d-786205ca2314" name="MS Excel VBO::Open Workbook" type="Action">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="File name" friendlyname="File name" narrative="The path and name of the file which should be opened." expr="&quot;C:\Users\Senendra Deshlahre\Desktop\BluePrism-AddressBookSystem\Copy of Contacts.xlsx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="Workbook Name" />
+    </outputs>
+    <onsuccess>9c33da46-5cfd-41a3-b514-c45cdf25e246</onsuccess>
+    <resource object="MS Excel VBO" action="Open Workbook" />
+  </stage>
+  <stage stageid="9c33da46-5cfd-41a3-b514-c45cdf25e246" name="MS Excel VBO::Get Worksheet As Collection" type="Action">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the worksheet which should be retrieved resides. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name of the workbook which contains the sheet required. The default empty text indicates the currently active workbook on the specified instance." expr="[Workbook Name]" />
+      <input type="text" name="Worksheet Name" friendlyname="Worksheet Name" narrative="The name of the worksheet within the specified workbook which should be written to a collection. The default empty text indicates the currently active worksheet within the specified workbook." expr="&quot;Sheet1&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" narrative="The collection containing the data from the specified worksheet - the column IDs will be gleaned from the first row on the sheet being retrieved." stage="Results1" />
+    </outputs>
+    <onsuccess>a9e7827d-956f-4983-8e93-107cfaa7ced4</onsuccess>
+    <resource object="MS Excel VBO" action="Get Worksheet As Collection" />
+  </stage>
+  <stage stageid="601be0ff-4bc0-45d1-a56d-c7103fbbf050" name="Workbook Name" type="Data">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <display x="-240" y="15" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6fb0fb2b-b78c-48d4-b473-06720fb633b7" name="Results1" type="Collection">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <display x="-405" y="-15" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="First_Name" type="text" />
+      <field name="Last_Name" type="text" />
+      <field name="Address" type="text" />
+      <field name="City" type="text" />
+      <field name="State" type="text" />
+      <field name="Zip" type="text" />
+      <field name="Phone_Number" type="text" />
+      <field name="Email" type="text" />
+      <field name="Path" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="First_Name" type="text" value="" />
+        <field name="Last_Name" type="text" value="" />
+        <field name="Address" type="text" value="" />
+        <field name="City" type="text" value="" />
+        <field name="State" type="text" value="" />
+        <field name="Zip" type="text" value="" />
+        <field name="Phone_Number" type="text" value="" />
+        <field name="Email" type="text" value="" />
+        <field name="Path" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="0b850f0d-bda4-40ed-ad3c-a7531c161cb1" name="MS Excel VBO::Create Instance" type="Action">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-165" />
+    <inputs>
+      <input type="flag" name="Enable Events" friendlyname="Enable Events" narrative="Flag to indicate that events should be enabled / disabled on the attached instance - defaulted to True" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" friendlyname="handle" narrative="An integer which can be used to identify the created instance in subsequent actions" stage="handle" />
+    </outputs>
+    <onsuccess>2374fcf0-a4a3-42f0-bb4d-786205ca2314</onsuccess>
+    <resource object="MS Excel VBO" action="Create Instance" />
+  </stage>
+  <stage stageid="85f0f578-128b-496e-9370-90fb44e5244b" name="handle" type="Data">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <display x="-225" y="-15" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8443be82-dc7e-4595-bc48-eb7c8c7e3539" name="Loop Start1" type="LoopStart">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit />
+    <display x="135" y="60" />
+    <onsuccess>af54d0d3-70b2-4d72-9c14-de9c0d9ccc11</onsuccess>
+    <groupid>03426c95-63ba-4ef9-8707-eb7d7c90df5d</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Results1</loopdata>
+  </stage>
+  <stage stageid="3db62507-bcd1-4c1a-950e-8d3ba009ea9d" name="Loop End1" type="LoopEnd">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit />
+    <display x="135" y="180" />
+    <onsuccess>61543ee3-b51f-47a8-ab6e-30fa5319c374</onsuccess>
+    <groupid>03426c95-63ba-4ef9-8707-eb7d7c90df5d</groupid>
+  </stage>
+  <stage stageid="af54d0d3-70b2-4d72-9c14-de9c0d9ccc11" name="SetRecevier" type="Calculation">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit />
+    <display x="240" y="60" />
+    <onsuccess>77351e2e-46c0-47b0-a2fa-809836e87a2c</onsuccess>
+    <calculation expression="[Results1.Email]" stage="receiver" />
+  </stage>
+  <stage stageid="77351e2e-46c0-47b0-a2fa-809836e87a2c" name="Set Path" type="Calculation">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit />
+    <display x="345" y="120" />
+    <onsuccess>5b34c44b-1112-43b5-adbe-7584d1f2eb94</onsuccess>
+    <calculation expression="[Results1.Path]" stage="Attachment.Path" />
+  </stage>
+  <stage stageid="a6a1fa2c-7859-4bc9-987f-c33c1ba44735" name="receiver" type="Data">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <display x="-255" y="45" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="86eac228-6841-4ef7-a33d-87e1c7f9b98d" name="Attachment" type="Collection">
+    <subsheetid>c3b01f64-af9e-4d0a-b281-db593ece411b</subsheetid>
+    <loginhibit />
+    <display x="-420" y="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Path" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Path" type="text" value="" />
+      </row>
+    </initialvalue>
   </stage>
 </process>
